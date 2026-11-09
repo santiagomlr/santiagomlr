@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070B18"/>
+      <stop offset="1" stop-color="#0E1530"/>
+    </linearGradient>
+    <radialGradient id="glowC" cx="0.82" cy="0.25" r="0.55">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowG" cx="0.1" cy="1" r="0.6">
+      <stop offset="0" stop-color="#E3B341" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#E3B341" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.6" stop-color="#C7F4FF"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#E3B341"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#22D3EE" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <clipPath id="r"><rect width="1200" height="360" rx="22"/></clipPath>
+    <style>
+      .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+      .fade1{opacity:0;animation:up .9s ease-out .2s forwards}
+      .fade2{opacity:0;animation:up .9s ease-out .6s forwards}
+      .fade3{opacity:0;animation:up .9s ease-out 1s forwards}
+      .fade4{opacity:0;animation:up .9s ease-out 1.4s forwards}
+      @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+      .grow{transform-origin:70px 0;transform:scaleX(0);animation:grow 1.2s cubic-bezier(.2,.8,.2,1) .9s forwards}
+      @keyframes grow{to{transform:scaleX(1)}}
+      .gridmove{animation:gm 8s linear infinite}
+      @keyframes gm{from{transform:translate(0,0)}to{transform:translate(-40px,-40px)}}
+      .n{animation:pulse 3s ease-in-out infinite}
+      .n2{animation:pulse 3s ease-in-out 1s infinite}
+      .n3{animation:pulse 3s ease-in-out 2s infinite}
+      @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+      .edge{stroke-dasharray:6 8;animation:flow 2.4s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-56}}
+      .blink{animation:bl 1s steps(1) infinite}
+      @keyframes bl{50%{opacity:0}}
+    </style>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="1200" height="360" fill="url(#bg)"/>
+    <g class="gridmove"><rect x="0" y="0" width="1280" height="440" fill="url(#grid)"/></g>
+    <rect width="1200" height="360" fill="url(#glowC)"/>
+    <rect width="1200" height="360" fill="url(#glowG)"/>
+
+    <!-- knowledge graph -->
+    <g stroke="#22D3EE" stroke-opacity="0.55" stroke-width="1.4" fill="none">
+      <path class="edge" d="M880 90 L990 150"/>
+      <path class="edge" d="M990 150 L1090 95"/>
+      <path class="edge" d="M990 150 L960 255"/>
+      <path class="edge" d="M960 255 L1080 280"/>
+      <path class="edge" d="M1090 95 L1120 200"/>
+      <path class="edge" d="M1120 200 L1080 280"/>
+      <path class="edge" d="M880 90 L840 200"/>
+      <path class="edge" d="M840 200 L960 255"/>
+      <path class="edge" d="M990 150 L1120 200"/>
+    </g>
+    <g>
+      <circle class="n" cx="880" cy="90" r="6" fill="#22D3EE"/>
+      <circle class="n2" cx="990" cy="150" r="10" fill="#E3B341"/>
+      <circle class="n3" cx="1090" cy="95" r="5" fill="#22D3EE"/>
+      <circle class="n" cx="960" cy="255" r="7" fill="#22D3EE"/>
+      <circle class="n2" cx="1080" cy="280" r="5" fill="#7DD3FC"/>
+      <circle class="n3" cx="1120" cy="200" r="6" fill="#22D3EE"/>
+      <circle class="n2" cx="840" cy="200" r="5" fill="#7DD3FC"/>
+      <circle cx="990" cy="150" r="22" fill="none" stroke="#E3B341" stroke-opacity="0.4">
+        <animate attributeName="r" values="12;30;12" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <text x="70" y="92" class="mono fade1" font-size="16" fill="#22D3EE" letter-spacing="3">~/santiagomlr $ whoami<tspan class="blink">_</tspan></text>
+    <text x="68" y="168" class="sans fade2" font-size="62" font-weight="800" fill="url(#txt)" letter-spacing="-1.5">Santiago Martín-Laborda</text>
+    <rect x="70" y="190" width="300" height="4" rx="2" fill="url(#bar)" class="grow"/>
+    <text x="70" y="236" class="sans fade3" font-size="24" fill="#CBD5E1" font-weight="500">I build AI systems that run real businesses.</text>
+
+    <g class="fade4 mono" font-size="14">
+      <rect x="70" y="268" width="170" height="34" rx="17" fill="#22D3EE" fill-opacity="0.12" stroke="#22D3EE" stroke-opacity="0.5"/>
+      <text x="155" y="290" text-anchor="middle" fill="#A5F3FC">◆ Founder · kalu</text>
+      <rect x="252" y="268" width="230" height="34" rx="17" fill="#E3B341" fill-opacity="0.12" stroke="#E3B341" stroke-opacity="0.5"/>
+      <text x="367" y="290" text-anchor="middle" fill="#FDE68A">⚙ AI &amp; Ops · Grupo Senda</text>
+      <rect x="494" y="268" width="196" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.25"/>
+      <text x="592" y="290" text-anchor="middle" fill="#E2E8F0">📍 Monterrey, MX</text>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="22" fill="none" stroke="#22D3EE" stroke-opacity="0.25"/>
+</svg>
